@@ -31,7 +31,7 @@ char *mystrcpy2(char *strDest, const char *strSrc)
 		d += size - 1;
 		s += size - 1;
 		while (size--){
-			*d-- = *s--;//vs2017 win10 运行到此处有问题但不提示错误，vs2010 win7提示内存冲：突
+			*d-- = *s--;//vs2017 win10 运行到此处有问题但不提示错误直接退出，vs2010 win7提示内存冲突
 		}
 	}
 	else {
@@ -45,7 +45,6 @@ char *mystrcpy2(char *strDest, const char *strSrc)
 int main(void)
 {
 	char *Src = "abcde";
-	char Dest[1024] = { 0 };
 	char *Dest2 = Src + 2;
 	printf("%s\n", Src);
 	mystrcpy2(Dest2, Src);
